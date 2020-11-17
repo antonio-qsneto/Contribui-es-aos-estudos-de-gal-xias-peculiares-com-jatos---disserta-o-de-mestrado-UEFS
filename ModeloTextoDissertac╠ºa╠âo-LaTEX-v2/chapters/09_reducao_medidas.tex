@@ -1,0 +1,28 @@
+\chapter{Redução e Medidas: Pacotes de Programas Utilizados}
+
+\section{IRAF}
+
+Para as observações realizadas no OPD-LNA/MCTIC, a redução e as medidas envolvendo os espectros das galáxias peculiares com jatos foi realizada com o pacote de tarefas IRAF (Image Reduction and Analysis Facility), versão 2.16. Detalhes sobre o pacote podem ser obtidos em \cite{tody1993iraf}. O IRAF é distribuído pelos National Optical Astronomy Observatories (NOAO), que são operados pela Association of Universities for Research in Astronomy, Inc. (AURA), sob acordo cooperativo com a National Science Foundation.
+
+
+\section{Linguagens de Programação}
+
+\subsection{IDL}
+
+O ambiente IDL (Interactive Data Language) é produto da RSI \url{(http://www.rsinc.com)}. Alguns programas foram elaborados para plotar os gráficos resultantes da síntese espectral e também para calcular as intensidades e larguras das linhas de emissão.
+
+\subsection{Python}
+
+O Python é uma linguagem de programação de alto nível, lançada em 1991 por Guido Van Rossum em modelo de desenvolvimento comunitário, portanto, com código aberto e gerenciado pelo Python Software Foundation \url{(https://www.python.org/psf/)}. A linguagem possui algumas características importantes para o tipo de estudo que pretendemos: é interpretada, ou seja, é
+executada por um interpretador de comandos; é orientada a objetos, a qual implementa um conjunto de classes que possuem comportamento e estados; é fortemente tipificada e dinâmica, já que a verificação do tipo de variável é feita em tempo real de execução e a conversão de tipos não é feita pelo interpretador, já que são bem definidas e não sofrem coerção.
+
+Usamos a biblioteca astroquery para fazer o download das imagens,
+em formato FITS, que é a extensão amplamente usada na astronomia para imagens e tabelas. A manipulação das imagens foi feita com o astropy.io. Também usamos as bibliotecas astroquery.ned e astroquery.vizier para a extração das informações nos bancos de dados.
+
+Também foi feito um programa em python para a conversão dos espectros .FITS em arquivos .DAT, necessários para alimentar o arquivo de entrada do STARLIGHT no FORTRAN.
+
+\subsection{Demais linguagens de programação}
+
+O compilador Fortran foi usado para o código de síntese especrtal STARLIGHT, cujos executáveis e outros arquivos necessários podem ser obtidos no link \url{www.starlight.ufsc.br/}.
+
+No que tange a uma série de outros programas, usamos o compilador C.

@@ -1,0 +1,107 @@
+\immediate\write18{makeindex \jobname.nlo -s nomencl.ist -o \jobname.nls}
+
+%Book style with A4 paper, chapeters start on left page only, using times fonts
+\documentclass[12pt,a4paper,oneside]{book}			
+
+\input{packages.tex}
+
+
+\begin{document}
+
+
+% Defines the title of the thesis.
+\def\thesisTitle{Título da disserta��o de mestrado} 
+
+% Defines the name of the author (that is your name).
+\def\thesisAuthor{Nome do autor} 
+
+\pagestyle{empty}
+
+\include{cover/title} 
+
+\include{cover/signature} 
+
+% Includes page number at the bottom of the page.
+\pagestyle{plain}
+
+% Uses small roman numbers for page numbering.
+\pagenumbering{roman} 				
+
+% Resets the page counter to 1.
+\setcounter{page}{1}
+
+
+\include{cover/abstract}
+\include{cover/resumo} 
+\include{cover/preface} 
+\include{cover/acknowledgements} 
+
+
+%Prints the table of contents
+\renewcommand{\contentsname}{Sumário}
+\tableofcontents
+\addcontentsline{toc}{chapter}{Sumário}
+\clearpage
+
+% Prints a list of abbreviations
+\include{cover/publications}
+
+
+% Prints a list of tables
+%\listoftables					
+%\addcontentsline{toc}{chapter}{Lista de Tabelas}
+%\clearpage
+
+
+% Prints a list of figures
+\listoffigures									
+\addcontentsline{toc}{chapter}{Lista de Figuras}
+\cleardoublepage
+
+% Prints a list of abbreviations
+%\include{cover/abbreviations}
+
+% Prints a list of symbols
+%\include{cover/symbols}
+
+
+% Fancing heading alternating section and chapter with page count on the top
+\pagestyle{fancy}
+\fancyhead[LE,RO]{\thepage} 
+\fancyhead[RE,LO]{\nouppercase{\leftmark}} 
+\setlength{\headheight}{14.5pt}
+\cfoot{}
+
+\pagenumbering{arabic} 				
+% Uses arabic numbers (normal numbers) for page numbering.
+
+\setcounter{page}{1}
+% Resets the page counter to 1.
+
+% The chapters
+\include{chapters/01_introducao}
+\include{chapters/02_revisao_bibliografica}
+\include{chapters/03_metodologia}
+\include{chapters/04_amostra}
+\include{chapters/05_sistema_web}
+\include{chapters/06_popestelar}
+\include{chapters/07_resultados}
+\include{chapters/08_consideracoes}
+\include{chapters/09_reducao_medidas}
+
+%Without the word "section"
+\fancyhead[LO]{\nouppercase{\rightmark}} 
+
+\renewcommand{\bibname}{Referências Bibliográficas}
+\addcontentsline{toc}{chapter}{Referências Bibliográficas}
+\bibliographystyle{sbc}
+\bibliography{references}
+
+% To start appendices with different chapter numbering
+\appendix
+
+\fancyhead[LO]{\nouppercase{\rightmark}}
+
+\input{chapters/appendix.tex}
+
+\end{document}

@@ -1,0 +1,149 @@
+\sloppy
+
+\usepackage{pdfpages}
+\usepackage{verbatim}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{cmap}				% Mapear caracteres especiais no PDF
+\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}			% Usado pela Ficha catalográfica
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{rotating}          % usar tabela na página em paisagem
+\usepackage{longtable}          % para usar tabelas longas
+% ---
+% For Code
+\usepackage{listings}
+\usepackage{minted}
+% ---
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}				% para geração de dummy text
+% ---
+
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+%\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xcolor}
+% Definindo novas cores
+\definecolor{verde}{rgb}{0,0.5,0}
+% Configurando layout para mostrar codigos C++
+\usepackage{listings}
+\lstset{
+  language=php,
+  basicstyle=\ttfamily\small, 
+  keywordstyle=\color{blue}, 
+  stringstyle=\color{verde}, 
+  commentstyle=\color{gray}, 
+  extendedchars=true, 
+  showspaces=false, 
+  showstringspaces=false, 
+  numbers=left,
+  numberstyle=\tiny,
+  breaklines=true, 
+  backgroundcolor=\color{black!10},
+  breakautoindent=true, 
+  captionpos=b,
+  xleftmargin=0pt,
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[T1]{fontenc} %write accents
+\usepackage[latin1]{inputenc} %permits to write the text with accents
+\usepackage[portuguese]{babel} %put dates in portuguese
+\usepackage{changepage} %Margin adjustment and detection of odd/even pages
+%%%%%%%%%%%%%%%%
+\usepackage{float}
+%%%%%%%%%%%%%%%%
+%To prepare list of symbols
+\usepackage{longtable}
+
+% Sets the margins of the document.
+\oddsidemargin 5mm
+\evensidemargin 5mm
+\textwidth 150mm
+\topmargin 0mm
+\headheight 0mm
+\textheight 225mm
+
+% Selects font encoding
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+%\usepackage{times}
+
+\usepackage{lipsum}
+
+\usepackage{epigraph}
+\setlength{\epigraphrule}{0pt}
+\setlength{\afterepigraphskip}{2\baselineskip}
+
+%header displays information according to document class and page number top right.
+\usepackage{fancyhdr}
+
+
+% Starts new paragraphs without indentation but with some space between the new and the previous paragraph.
+\usepackage{parskip}
+\setlength{\parskip}{1.5ex plus 0.4ex minus 0.4ex}
+%\usepackage{indentfirst}
+
+% try to keep paragraphs together
+\widowpenalty=300
+\clubpenalty=300
+
+% Used to create tables with rows/cols spanning over se
+\usepackage{array}
+\newcolumntype{L}[1]{>{\arraybackslash}p{#1cm}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1cm}}
+\usepackage{multirow}
+
+%Professional tables
+\usepackage{booktabs}
+
+% Math
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+% Used to include images with the includegraphics command
+\usepackage{epsfig,subfigure,amstext}
+\usepackage{graphicx}
+
+\usepackage{makeidx}
+\makeindex
+
+%permits relative paths in the imported files
+\usepackage{import}
+
+%permits to create different environments
+\usepackage{amsthm}
+
+\newtheoremstyle{simple}
+   {8pt}% hSpace above
+   {}% hSpace below
+   {\it}% hBody font
+   {1em}% hIndent amount
+   {}% hTheorem head font
+   {\textup{:}}% hPunctuation after theorem head
+   {.7em}% hSpace after theorem head
+   {}% hTheorem head spec (can be left empty, meaning `normal')
+
+\newtheoremstyle{enhanced}
+   {8pt}% hSpace above
+   {}% hSpace below
+   {}% hBody font
+   {1em}% hIndent amount
+   {\itshape}% hTheorem head font
+   {\textup{:}}% hPunctuation after theorem head
+   {.7em}% hSpace after theorem head
+   {}% hTheorem head spec (can be left empty, meaning `normal')
+
+
+%links in pdf (index, references, and figures..., change the colors to black)
+\usepackage[pdfborder={0 0 0},breaklinks=true,bookmarksopen=true,bookmarksopenlevel=1]{hyperref}
+
+
+% Used to include algorithms
+%\usepackage{algorithm,algorithmic}
+%\renewcommand{\algorithmiccomment}[1]{\hfill \textit{//#1}}
+%\newcommand{\vect}[1]{\overrightarrow{#1}}
